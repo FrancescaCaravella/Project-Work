@@ -18,12 +18,12 @@ def get_map_hierarchy():
 
 @app.route("/map/elements/<elementId>", methods = ['GET'])
 def get_map_elements(elementId):
-    response = requests.request("GET", url + "/map/elements/{elementId}", headers=headers, data=payload)
+    response = requests.request("GET", url + f"/map/elements/{elementId}", headers=headers, data=payload)
     return jsonify(response.text)
 
 @app.route("/map/images/floor/<imageName>", methods = ['GET'])
 def get_map_images_floor(imageName):
-    response = requests.request("GET", url + "/map/images/floor/{imageName}", headers=headers, data=payload)
+    response = requests.request("GET", url + f"/map/images/floor/{imageName}", headers=headers, data=payload)
     return jsonify(response.text)
 
 @app.route("/clients", methods = ['GET'])
@@ -78,7 +78,7 @@ def get_history_clients():
 
 @app.route("/history/clients/<deviceId>", methods = ['GET'])
 def get_history_clients_deviceId(deviceId):
-    response = requests.request("GET", url + "/history/clients/{deviceId}", headers=headers, data=payload)
+    response = requests.request("GET", url + f"/history/clients/{deviceId}", headers=headers, data=payload)
     return jsonify(response.text)
 
 @app.route("/notifications", methods = ['GET'])
@@ -88,7 +88,7 @@ def get_notifications():
 
 @app.route("/notifications/<subscriptionId>", methods = ['GET'])
 def get_notifications_subscriptionId(subscriptionId):
-    response = requests.request("GET", url + "/notifications/{subscriptionId}", headers=headers, data=payload)
+    response = requests.request("GET", url + f"/notifications/{subscriptionId}", headers=headers, data=payload)
     return jsonify(response.text)
 
 @app.route("/notifications/subscriptionId/statistics", methods = ['GET'])
